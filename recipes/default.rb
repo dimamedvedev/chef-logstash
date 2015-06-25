@@ -3,12 +3,12 @@
 # Recipe:: default
 #
 # Copyright (C) 2014 Wouter de Vos
-# 
+#
 # License: MIT
 #
 
 include_recipe "logstash::yumrepo" if platform_family? "rhel", "fedora"
-include_recipe "logstash::apt"     if platform_family? "debian"
+include_recipe "logstash::apt"     if platform_family? "debian", "ubuntu"
 
 directory "/etc/logstash" do
   owner "logstash"
